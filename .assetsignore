@@ -1,0 +1,8 @@
+.git/
+.gitattributes
+.wrangler/
+functions/
+migrations/
+src/
+README.md
+wrangler.toml
