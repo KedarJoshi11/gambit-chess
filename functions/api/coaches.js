@@ -1,0 +1,1 @@
+export async function onRequestGet({env}){const {results}=await env.DB.prepare('SELECT id,name,title,bio,hourly_rate,rating,specialty,tags,color,initial FROM coaches WHERE active=1 ORDER BY id').all();return Response.json(results)}

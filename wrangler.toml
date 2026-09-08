@@ -1,0 +1,13 @@
+name = "gambit-chess"
+main = "src/worker.js"
+compatibility_date = "2026-09-09"
+
+[assets]
+directory = "."
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gambit-bookings"
+database_id = "01be239b-440f-4deb-88af-e18dfa069a72"

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#14213d" />
+    <meta name="description" content="Find your next chess coach, book by the hour, and improve your game." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Gambit — Find your chess coach</title>
+  </head>
+  <body>
+    <main>
+      <nav class="nav shell">
+        <a class="brand" href="#top" aria-label="Gambit home"><span class="brand-mark">♞</span>GAMBIT</a>
+        <div class="nav-links"><a href="#coaches">Find a coach</a><a href="#how-it-works">How it works</a></div>
+        <button class="nav-cta" id="openBooking">Book a session <span>→</span></button>
+      </nav>
+
+      <section class="hero shell" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">PERSONAL COACHING, ON YOUR TERMS</p>
+          <h1>Move beyond<br /><em>your next move.</em></h1>
+          <p class="hero-text">Meet exceptional chess coaches for one-to-one lessons, strategy sessions, and serious improvement — wherever you are.</p>
+          <div class="hero-actions"><a class="button primary" href="#coaches">Explore coaches <span>↗</span></a><button class="text-button" id="heroBooking">Book a lesson <span>→</span></button></div>
+          <div class="trust"><div class="avatars"><span>AK</span><span>JS</span><span>MR</span><span>+2k</span></div><p><strong>2,000+ players</strong><br />are improving with Gambit</p></div>
+        </div>
+        <div class="hero-art" aria-label="Decorative chess board">
+          <div class="board-glow"></div><div class="chess-board" id="chessBoard"></div>
+          <div class="floating-card rating-card"><span>★</span><strong>4.9</strong><small>average rating</small></div>
+          <div class="floating-card lesson-card"><span class="pulse"></span><div><strong>LIVE LESSON</strong><small>In progress now</small></div></div>
+          <p class="art-caption">THE BOARD IS YOURS</p>
+        </div>
+      </section>
+
+      <section class="featured shell" id="coaches">
+        <div class="section-heading"><div><p class="eyebrow">FIND YOUR MATCH</p><h2>Coaches who see the <em>whole board.</em></h2></div><button class="all-link" id="showAll">View all coaches <span>→</span></button></div>
+        <div class="filter-row" role="group" aria-label="Filter coaches"><button class="filter active" data-filter="all">All coaches</button><button class="filter" data-filter="beginner">For beginners</button><button class="filter" data-filter="tactics">Tactics</button><button class="filter" data-filter="opening">Openings</button><button class="filter" data-filter="tournament">Tournament prep</button></div>
+        <div class="coach-grid" id="coachGrid" aria-live="polite"><p class="loading">Finding exceptional coaches…</p></div>
+      </section>
+
+      <section class="steps" id="how-it-works"><div class="shell"><p class="eyebrow">HOW IT WORKS</p><div class="steps-heading"><h2>Great chess starts<br />with a <em>great guide.</em></h2><p>From your first lesson to tournament day, Gambit makes finding the right coach effortless.</p></div><div class="steps-grid"><article><span class="step-number">01</span><h3>Find your fit</h3><p>Browse expert coaches by style, rating, language, and availability.</p></article><article><span class="step-number">02</span><h3>Pick a time</h3><p>Book an hourly session that works around your schedule.</p></article><article><span class="step-number">03</span><h3>Play smarter</h3><p>Meet online, review your games, and watch your confidence grow.</p></article></div></div></section>
+
+      <section class="cta shell"><div><p class="eyebrow">YOUR NEXT GAME STARTS HERE</p><h2>Make every move<br /><em>count.</em></h2></div><button class="button light" id="bottomBooking">Find your coach <span>↗</span></button></section>
+    </main>
+    <footer class="footer shell"><a class="brand" href="#top"><span class="brand-mark">♞</span>GAMBIT</a><p>Better chess, one move at a time.</p><p>© 2026 Gambit</p></footer>
+
+    <div class="modal" id="bookingModal" aria-hidden="true"><div class="modal-backdrop" data-close></div><section class="modal-content" role="dialog" aria-modal="true" aria-labelledby="bookingTitle"><button class="close" data-close aria-label="Close">×</button><p class="eyebrow">BOOK A SESSION</p><h2 id="bookingTitle">Choose your next<br /><em>great move.</em></h2><form id="bookingForm"><label>Your name<input required name="name" maxlength="80" placeholder="Alex Morgan" /></label><label>Email<input required type="email" name="email" maxlength="160" placeholder="alex@example.com" /></label><label>Coach<select required name="coach" id="coachSelect"></select></label><div class="form-split"><label>Date<input required type="date" name="date" id="dateInput" /></label><label>Time<select required name="time" id="timeSelect"><option value="">Choose a coach &amp; date</option></select></label></div><p class="form-note" id="availabilityNote">Select a coach and date to see live availability.</p><button class="button primary submit" type="submit">Request booking <span>→</span></button></form><div class="success" id="success"><div class="success-icon">✓</div><h3>You’re on the board!</h3><p id="successText"></p><button class="button primary" data-close>Done</button></div></section></div>
+    <script src="app.js"></script>
+  </body>
+</html>
